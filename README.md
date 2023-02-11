@@ -1,2 +1,3 @@
-# jsmethod-extra
-Js development help library
+<h1 align="center">jsmethod-extra</h1>
+
+
