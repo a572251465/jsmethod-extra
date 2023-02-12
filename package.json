@@ -1,7 +1,7 @@
 {
   "name": "jsmethod-extra",
   "version": "0.0.3",
-  "description": "js method help document",
+  "description": "Extra methods for JavaScript",
   "main": "dist/index.cjs.min.js",
   "module": "dist/index.esm.min.js",
   "typings": "typings/index.d.ts",
