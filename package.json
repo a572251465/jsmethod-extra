@@ -1,9 +1,9 @@
 {
   "name": "jsmethod-extra",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "js method help document",
-  "main": "dist/index.cjs.js",
-  "module": "dist/index.esm.js",
+  "main": "dist/index.cjs.min.js",
+  "module": "dist/index.esm.min.js",
   "typings": "typings/index.d.ts",
   "scripts": {
     "lint": "eslint --fix --ext .js src",
@@ -28,6 +28,7 @@
     "@commitlint/cli": "^17.4.2",
     "@commitlint/config-conventional": "^17.4.2",
     "@jest/globals": "^29.4.2",
+    "@rollup/plugin-babel": "^6.0.3",
     "@rollup/plugin-terser": "^0.4.0",
     "babel-jest": "^29.4.2",
     "eslint": "^8.34.0",

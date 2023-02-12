@@ -1,6 +1,7 @@
 const path = require("path");
 const del = require("rollup-plugin-del");
 const terser = require("@rollup/plugin-terser");
+const { babel } = require("@rollup/plugin-babel");
 
 const resolvePath = (...args) => path.resolve(__dirname, ...args);
 
@@ -42,5 +43,5 @@ const genOutputConfig = (arr = []) => {
 module.exports = {
   input: resolvePath("./src/index.js"),
   output: genOutputConfig(basicsOutputConfig),
-  plugins: [del()]
+  plugins: [del(), babel({ babelHelpers: "bundled" })]
 };
