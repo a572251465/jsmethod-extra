@@ -98,11 +98,84 @@ joinPathNoResolve("test", "/001", "002"); // => 'test/001002'
 joinPathNoResolve([1, 2, 3]); // => '1,2,3'
 ```
 
+### startCut
+
+cut front character string
+
+- params
+  - value: string
+  - len: number
+
+**Typescript Type**
+
+```ts
+type startCut = (value: string, len: number) => string;
+```
+
+**Example**
+
+```js
+startCut("test", 1); // => 't'
+startCut("test", 2); // => 'te'
+startCut("test", 10); // => 'test'
+startCut("test", 0); // => 'test'
+startCut("test", -1); // => 'test'
+```
+
+### endCut
+
+cut ending character string
+
+- params
+  - value: string
+  - len: number
+
+**Typescript Type**
+
+```ts
+type endCut = (value: string, len: number) => string;
+```
+
+**Example**
+
+```js
+endCut("test", 1); // => 't'
+endCut("test", 2); // => 'st'
+endCut("test", 10); // => 'test'
+endCut("test", 0); // => 'test'
+endCut("test", -1); // => 'test'
+```
+
+### mergePathOnSymbol
+
+splice strings according to characters
+
+- params
+  - sign: string
+  - args1: string
+  - args2: string
+  - ...
+
+**Typescript Type**
+
+```ts
+type mergePathOnSymbol = (sign: string, ...args: string[]) => string;
+```
+
+**Example**
+
+```js
+mergePathOnSymbol("/", "a", "b", "c"); // => 'a/b/c'
+mergePathOnSymbol("/", "a/", "/b", "c"); // => 'a/b/c'
+mergePathOnSymbol("/", "https://random.com/", "/home"); // => 'https://random.com/home'
+```
+
 ### normal type check
 
 - isString
 - isEmpty
 - isFunction
+- isNumber
 
 **Typescript Type**
 
@@ -110,4 +183,5 @@ joinPathNoResolve([1, 2, 3]); // => '1,2,3'
 type isString = (value: unknown) => boolean;
 type isEmpty = (value: unknown) => boolean;
 type isFunction = (value: unknown) => boolean;
+type isNumber = (value: unknown) => boolean;
 ```
