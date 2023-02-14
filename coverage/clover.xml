@@ -1,21 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1676255190390" clover="3.2.0">
-  <project timestamp="1676255190390" name="All files">
-    <metrics statements="71" coveredstatements="71" conditionals="50" coveredconditionals="50" methods="9" coveredmethods="9" elements="130" coveredelements="130" complexity="0" loc="71" ncloc="71" packages="2" files="7" classes="7"/>
+<coverage generated="1676340840517" clover="3.2.0">
+  <project timestamp="1676340840517" name="All files">
+    <metrics statements="101" coveredstatements="101" conditionals="69" coveredconditionals="68" methods="11" coveredmethods="11" elements="181" coveredelements="180" complexity="0" loc="101" ncloc="101" packages="2" files="8" classes="8"/>
     <package name="src">
-      <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <metrics statements="13" coveredstatements="13" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       <file name="index.js" path="E:\my_project\jsmethod-extra\src\index.js">
-        <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <metrics statements="13" coveredstatements="13" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
         <line num="4" count="1" type="stmt"/>
         <line num="5" count="1" type="stmt"/>
         <line num="6" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
       </file>
     </package>
     <package name="src.helpr">
-      <metrics statements="65" coveredstatements="65" conditionals="50" coveredconditionals="50" methods="9" coveredmethods="9"/>
+      <metrics statements="88" coveredstatements="88" conditionals="69" coveredconditionals="68" methods="11" coveredmethods="11"/>
       <file name="addUrlPrefix.js" path="E:\my_project\jsmethod-extra\src\helpr\addUrlPrefix.js">
         <metrics statements="15" coveredstatements="15" conditionals="10" coveredconditionals="10" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
@@ -34,6 +41,30 @@
         <line num="14" count="1" type="stmt"/>
         <line num="15" count="1" type="stmt"/>
       </file>
+      <file name="backPosCut.js" path="E:\my_project\jsmethod-extra\src\helpr\backPosCut.js">
+        <metrics statements="21" coveredstatements="21" conditionals="18" coveredconditionals="17" methods="1" coveredmethods="1"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="4" count="14" type="cond" truecount="3" falsecount="0"/>
+        <line num="5" count="12" type="stmt"/>
+        <line num="6" count="14" type="cond" truecount="2" falsecount="0"/>
+        <line num="7" count="14" type="cond" truecount="3" falsecount="0"/>
+        <line num="8" count="14" type="cond" truecount="2" falsecount="0"/>
+        <line num="9" count="8" type="stmt"/>
+        <line num="10" count="8" type="stmt"/>
+        <line num="11" count="14" type="cond" truecount="1" falsecount="0"/>
+        <line num="12" count="3" type="stmt"/>
+        <line num="13" count="14" type="cond" truecount="1" falsecount="0"/>
+        <line num="14" count="5" type="stmt"/>
+        <line num="15" count="5" type="cond" truecount="1" falsecount="0"/>
+        <line num="16" count="8" type="stmt"/>
+        <line num="17" count="8" type="stmt"/>
+        <line num="18" count="14" type="cond" truecount="2" falsecount="0"/>
+        <line num="19" count="14" type="cond" truecount="1" falsecount="1"/>
+        <line num="20" count="7" type="stmt"/>
+        <line num="21" count="7" type="stmt"/>
+      </file>
       <file name="endCut.js" path="E:\my_project\jsmethod-extra\src\helpr\endCut.js">
         <metrics statements="13" coveredstatements="13" conditionals="7" coveredconditionals="7" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
@@ -51,11 +82,13 @@
         <line num="13" count="1" type="stmt"/>
       </file>
       <file name="isTypes.js" path="E:\my_project\jsmethod-extra\src\helpr\isTypes.js">
-        <metrics statements="4" coveredstatements="4" conditionals="4" coveredconditionals="4" methods="4" coveredmethods="4"/>
+        <metrics statements="6" coveredstatements="6" conditionals="5" coveredconditionals="5" methods="5" coveredmethods="5"/>
         <line num="1" count="1" type="cond" truecount="1" falsecount="0"/>
         <line num="2" count="1" type="cond" truecount="1" falsecount="0"/>
         <line num="3" count="1" type="cond" truecount="1" falsecount="0"/>
         <line num="4" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="1" type="cond" truecount="1" falsecount="0"/>
       </file>
       <file name="joinPathNoResolve.js" path="E:\my_project\jsmethod-extra\src\helpr\joinPathNoResolve.js">
         <metrics statements="2" coveredstatements="2" conditionals="3" coveredconditionals="3" methods="1" coveredmethods="1"/>

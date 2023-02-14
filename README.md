@@ -170,12 +170,43 @@ mergePathOnSymbol("/", "a/", "/b", "c"); // => 'a/b/c'
 mergePathOnSymbol("/", "https://random.com/", "/home"); // => 'https://random.com/home'
 ```
 
+### backPosCut
+
+specify the number of digits after the string and intercept the specified length
+
+- params
+  - value
+    - type: string
+    - required: true
+  - pos
+    - type: number
+    - required: true
+  - len
+    - type: number
+    - required: no
+  - ...
+
+**Typescript Type**
+
+```ts
+type backPosCut = (value: string, pos: number, len?: number) => string;
+```
+
+**Example**
+
+```js
+backPosCut("123456", 3, 2); // => "45"
+backPosCut("123456", -1, 2); // => "12"
+backPosCut("123456", 5); // => "23456"
+```
+
 ### normal type check
 
 - isString
 - isEmpty
 - isFunction
 - isNumber
+- isUndefined
 
 **Typescript Type**
 
@@ -184,4 +215,5 @@ type isString = (value: unknown) => boolean;
 type isEmpty = (value: unknown) => boolean;
 type isFunction = (value: unknown) => boolean;
 type isNumber = (value: unknown) => boolean;
+type isUndefined = (value: unknown) => boolean;
 ```

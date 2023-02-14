@@ -1,6 +1,6 @@
 {
   "name": "jsmethod-extra",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Extra methods for JavaScript",
   "main": "dist/index.cjs.min.js",
   "module": "dist/index.esm.min.js",
