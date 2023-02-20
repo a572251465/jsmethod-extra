@@ -6,7 +6,6 @@ const { babel } = require("@rollup/plugin-babel");
 const resolvePath = (...args) => path.resolve(__dirname, ...args);
 
 const basicsOutputConfig = [
-  "cjs",
   "esm",
   {
     format: "iife",
@@ -14,7 +13,7 @@ const basicsOutputConfig = [
     plugins: [],
     name: "jsMethods"
   },
-  ...["cjs", "esm"].map((item) => ({
+  ...["esm"].map((item) => ({
     format: item,
     plugins: [terser()],
     file: resolvePath(`./dist/index.${item}.min.js`)
@@ -41,7 +40,7 @@ const genOutputConfig = (arr = []) => {
 };
 
 module.exports = {
-  input: resolvePath("./src/index.js"),
+  input: resolvePath("./src/co.js"),
   output: genOutputConfig(basicsOutputConfig),
   plugins: [del(), babel({ babelHelpers: "bundled" })]
 };

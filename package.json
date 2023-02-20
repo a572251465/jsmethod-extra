@@ -9,7 +9,9 @@
     "lint": "eslint --fix --ext .js src",
     "prepare": "husky install",
     "test": "jest",
-    "build": "rollup -c rollup.config.js"
+    "build:other": "rollup -c rollup.config.js",
+    "build:cjs": "rollup -c rollup.config.cjs.js",
+    "build": "npm run build:other && npm run build:cjs"
   },
   "repository": {
     "type": "git",
