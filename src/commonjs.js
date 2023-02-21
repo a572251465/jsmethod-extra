@@ -1,3 +1,5 @@
 export { exec, execAsync } from "./nodes/exec";
-export { currFilesCountAsync, currDirsCountAsync } from "./nodes/filesCount";
+export { isWindow, isDirExist, isFileExist } from "./nodes/types";
+export { currFilesCountAsync } from "./nodes/filesCount";
+export { currDirsCountAsync } from "./nodes/dirsCount";
 export * from "./co";

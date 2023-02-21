@@ -1,6 +1,6 @@
-import { isString } from "../co";
+import { isEmpty, isString } from "../co";
 import { execAsync } from "./exec";
-import { isWindow } from "./types";
+import { isDirExist, isWindow } from "./types";
 import fs from "fs";
 import * as path from "path";
 
@@ -12,8 +12,7 @@ import * as path from "path";
  */
 const filesCountForWindow = async (currPath) => {
   let fileCount = 0;
-  const dirStat = fs.statSync(currPath);
-  if (dirStat.isFile()) return fileCount;
+  if (!isDirExist(currPath)) return fileCount;
 
   const files = fs.readdirSync(currPath);
   files.forEach((fileName) => {
@@ -36,16 +35,13 @@ const filesCountForLinux = async (currPath) => {
   });
 };
 
-export const currFilesCountAsync = async (currPath) => {
+export const currFilesCountAsync = async (currPath, env) => {
   if (!isString(currPath)) throw new Error("currPath must be a string");
+  if (isEmpty(env)) env = isWindow() ? "window" : "linux";
 
-  const result = await (isWindow()
-    ? filesCountForWindow(currPath)
-    : filesCountForLinux(currPath));
+  const result = await (env === "linux"
+    ? filesCountForLinux(currPath)
+    : filesCountForWindow(currPath));
 
   return result;
-};
-
-export const currDirsCountAsync = (currPath) => {
-  console.log(currPath);
 };
