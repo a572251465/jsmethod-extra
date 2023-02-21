@@ -31,7 +31,7 @@ const filesCountForWindow = async (currPath) => {
  * @return {Promise<void>}
  */
 const filesCountForLinux = async (currPath) => {
-  return await execAsync(`ls -l | wc -l`, {
+  return await execAsync(`ls -al | grep "^-" | wc -l`, {
     cwd: currPath
   });
 };

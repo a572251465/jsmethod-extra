@@ -4,7 +4,9 @@ export {
   isFunction,
   isString,
   isNumber,
-  isUndefined
+  isUndefined,
+  isObject,
+  isArray
 } from "./helpr/isTypes";
 export { addUrlPrefix } from "./helpr/addUrlPrefix";
 export { startCut } from "./helpr/startCut";
