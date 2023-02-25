@@ -1,4 +1,4 @@
-import { isEmpty, isString } from "../co";
+import { isEmpty, isString } from "../common/index";
 import { execAsync } from "./exec";
 import { isDirExist, isWindow } from "./types";
 import fs from "fs";
@@ -16,6 +16,8 @@ const filesCountForWindow = async (currPath) => {
 
   const files = fs.readdirSync(currPath);
   files.forEach((fileName) => {
+    // 判断是否是隐藏文件
+    if (fileName.startsWith(".")) return;
     const newPathStat = fs.statSync(path.join(currPath, fileName));
     if (newPathStat.isFile()) fileCount++;
   });
@@ -30,7 +32,7 @@ const filesCountForWindow = async (currPath) => {
  * @return {Promise<void>}
  */
 const filesCountForLinux = async (currPath) => {
-  return await execAsync(`ls -al | grep "^-" | wc -l`, {
+  return await execAsync(`ls -l | grep "^-" | wc -l`, {
     cwd: currPath
   });
 };

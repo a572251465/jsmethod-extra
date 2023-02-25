@@ -1,4 +1,4 @@
-import { isFunction, isObject, isString } from "../co";
+import { isFunction, isObject, isString } from "../common/index";
 
 const childProcess = require("child_process");
 

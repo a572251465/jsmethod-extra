@@ -40,7 +40,7 @@ const genOutputConfig = (arr = []) => {
 };
 
 module.exports = {
-  input: resolvePath("./src/co.js"),
+  input: resolvePath("./src/index.js"),
   output: genOutputConfig(basicsOutputConfig),
   plugins: [del(), babel({ babelHelpers: "bundled" })]
 };

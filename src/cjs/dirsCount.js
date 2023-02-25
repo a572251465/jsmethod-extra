@@ -2,7 +2,7 @@ import { execAsync } from "./exec";
 import { isDirExist, isWindow } from "./types";
 import fs from "fs";
 import path from "path";
-import { isEmpty, isString } from "../helpr/isTypes";
+import { isEmpty, isString } from "../common/index";
 
 /**
  * @author lihh
@@ -11,7 +11,7 @@ import { isEmpty, isString } from "../helpr/isTypes";
  * @return {Promise<void>}
  */
 const dirsCountForLinux = async (currPath) => {
-  return await execAsync(`ls -al | grep "^d" | wc -l`, {
+  return await execAsync(`ls -l | grep "^d" | wc -l`, {
     cwd: currPath
   });
 };
@@ -28,6 +28,9 @@ const dirsCountForWindow = async (currPath) => {
 
   const files = fs.readdirSync(currPath);
   files.forEach((fileName) => {
+    // 判断是否是隐藏文件夹
+    if (fileName.startsWith(".")) return;
+
     const newPathStat = fs.statSync(path.join(currPath, fileName));
     if (newPathStat.isDirectory()) dirCount++;
   });

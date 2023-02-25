@@ -6,7 +6,7 @@ const { babel } = require("@rollup/plugin-babel");
 const resolvePath = (...args) => path.resolve(__dirname, ...args);
 
 module.exports = {
-  input: resolvePath("./src/commonjs.js"),
+  input: resolvePath("./src/index.cjs.js"),
   output: [
     {
       file: resolvePath(`./dist/index.cjs.js`),
@@ -19,5 +19,5 @@ module.exports = {
       plugins: [terser()]
     }
   ],
-  plugins: [del(), babel({ babelHelpers: "bundled" })]
+  plugins: [babel({ babelHelpers: "bundled" })]
 };
