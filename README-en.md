@@ -2,9 +2,9 @@
 
 > Extra methods for JavaScript
 
-简体中文 | [English](https://github.com/a572251465/jsmethod-extra.md)
+English | [简体中文](https://github.com/a572251465/jsmethod-extra/README.md)
 
-### 选择理由
+### choice reason
 
 - [x] 100% test coverage
 - [x] support TypeScript
@@ -15,7 +15,7 @@
 - [x] support import and require
 - [x] support npm and yarn and pnpm
 
-### 下载
+### install
 
 ```shell
 npm install jsmethod-extra -S
@@ -49,7 +49,7 @@ pnpm install jsmethod-extra -S
 
 #### addPrefix
 
-使用案例
+use example
 
 ```js
 import { addPrefix } from "jsmethod-extra";
@@ -64,7 +64,7 @@ addPrefix(baseUrl, "/api/");
 addPrefix(baseUrl, prefix, "-");
 ```
 
-类型
+type
 
 ```ts
 export type addPrefix<T> = {
@@ -157,7 +157,7 @@ isPlainObject(1);
 
 #### getTypes
 
-使用案例
+use example
 
 ```js
 import { getTypes } from "jsmethod-extra";
@@ -169,7 +169,7 @@ getTypes(1);
 getTypes([true, "11"]);
 ```
 
-类型
+type
 
 ```ts
 export type getTypes = {
@@ -179,15 +179,15 @@ export type getTypes = {
 
 #### isFullObject
 
-> 非空对象 && 是否满足某些属性存在。
+> not empty object && Whether certain attributes exist.
 
 ##### field
 
-- value 判断的对象，必须输入
-- fields 存在的属性，必须是数组，但是不一定要存在
-- isAll 是否要满足 fields 中的值 在对象 value 中存在
+- value judge object，required input
+- fields The existing attribute must be an array, but it does not necessarily exist
+- isAll Do you want to satisfy that the value in fields exists in object value
 
-使用案例
+use example
 
 ```js
 import { isFullObject } from "jsmethod-extra";
@@ -200,7 +200,7 @@ console.log(isFullObject(info, ["age"], true)); // true
 console.log(isFullObject(info, ["age,", "age1"], true)); // false
 ```
 
-类型
+type
 
 ```ts
 export type isFullObject = (
@@ -212,7 +212,7 @@ export type isFullObject = (
 
 #### equals
 
-使用案例
+use example
 
 ```js
 import { equals } from "jsmethod-extra";
@@ -225,7 +225,7 @@ console.log(equals("200", 200, 200)); // true
 console.log(equals(null, undefined)); // true
 ```
 
-类型
+type
 
 ```ts
 type equals = (...args: unknown[]) => boolean;
@@ -233,8 +233,8 @@ type equals = (...args: unknown[]) => boolean;
 
 #### slice
 
-如果有符号存在，被截取的部分跟符号一致才会截取，反之不截取。
-如果没有符号存在，功能类似于 String.prototype.slice
+If there is a symbol present, the truncated part will only be truncated if it matches the symbol, otherwise it will not be truncated。
+If there are no symbols present, the function is similar to String. prototype. slice
 
 use example
 
@@ -337,9 +337,9 @@ isHas(person, "address");
 - isFunction
 - isArray
 
-## 更新记录
+## update records
 
-> 无版本说明, 更新 README file
+> no version explain, update README file
 
-- 1.0.0 大升级后，第一次发版
-- 1.0.2 添加方法【isHas】声明类型
+- 1.0.0 after the major upgrade, the first release
+- 1.0.2 add function【isHas】declaration type
