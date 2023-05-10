@@ -286,15 +286,15 @@ isBlankEmpty(0);
 - use
 
 ```js
-import { valueOrDefault, isBlankEmpty } from "jsmethod-extra";
+import { valueOrDefault, isEmpty } from "jsmethod-extra";
 // 1
 valueOrDefault("", "1");
 // 10
 valueOrDefault(10, 20);
-// 0
-valueOrDefault(0, 10);
 // 10
-valueOrDefault(0, 10, isBlankEmpty);
+valueOrDefault(0, 10);
+// 0
+valueOrDefault(0, 10, isEmpty);
 ```
 
 - type
@@ -303,7 +303,7 @@ valueOrDefault(0, 10, isBlankEmpty);
 type valueOrDefault = <T>(
   value: T,
   replaceValue: T,
-  judgeFn = isEmpty
+  judgeFn = isBlankEmpty
 ) => boolean;
 ```
 
@@ -343,3 +343,4 @@ isHas(person, "address");
 
 - 1.0.0 after the major upgrade, the first release
 - 1.0.2 add function【isHas】declaration type
+- 1.0.3 add function valueOrDefault infer type

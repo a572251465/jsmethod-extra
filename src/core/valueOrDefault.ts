@@ -1,7 +1,7 @@
-import { isEmpty } from "./isEmpty";
+import { isBlankEmpty } from "./isBlankEmpty";
 
-export const valueOrDefault = <T>(
+export const valueOrDefault = <T, K>(
   value: T,
-  replaceValue: T,
-  judgeFn = isEmpty
+  replaceValue: K,
+  judgeFn = isBlankEmpty
 ) => (judgeFn(value) ? replaceValue : value);
