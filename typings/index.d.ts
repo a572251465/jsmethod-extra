@@ -26,3 +26,4 @@ export { slice } from "./core/slice";
 export { valueOrDefault } from "./core/valueOrDefault";
 export { isBlankEmpty } from "./core/isBlankEmpty";
 export { isHas } from "./core/isHas";
+export { timeFormatting, TimeType } from "./core/timeFormatting";
