@@ -386,3 +386,4 @@ export declare function timeFormatting(date: TimeType): string;
 - 1.0.2 添加方法【isHas】声明类型
 - 1.0.3 添加方法【valueOrDefault】 推断类型
 - 1.0.4 添加方法【timeFormatting】
+- 1.0.5 修改【timeFormatting】导出类型

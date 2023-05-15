@@ -386,3 +386,4 @@ export declare function timeFormatting(date: TimeType): string;
 - 1.0.2 add function【isHas】declaration type
 - 1.0.3 add function valueOrDefault infer type
 - 1.0.4 add function timeFormatting
+- 1.0.5 edit function timeFormatting type

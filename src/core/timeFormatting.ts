@@ -4,58 +4,37 @@ import { isNotEmpty } from "./isNotEmpty";
 import { isBlankEmpty } from "./isBlankEmpty";
 import { equals } from "./equals";
 
-const enum TimeType {
-  ONE = "YYYY-MM-DD",
-  TWO = "YYYY-MM-DD HH:mm:ss",
-  THREE = "YYYY-MM-DD HH:mm",
-  FOUR = "YYYY/MM/DD",
-  FIVE = "YYYY/MM/DD HH:mm:ss",
-  SIX = "YYYY/MM/DD HH:mm",
-  SEVEN = "YYYY年MM月DD日",
-  EIGHT = "YYYY年MM月DD日 HH时mm分ss秒",
-  NINE = "YYYY年MM月DD日 HH时mm分",
-  TEN = "YYYY年MM月DD日 HH:mm:ss",
-  ELEVEN = "YYYY年MM月DD日 HH:mm",
-  TWELVE = "YYYY年MM月",
-  THIRTEEN = "MM月DD日",
-  FOURTEEN = "MM月DD日 HH时mm分ss秒",
-  FIFTEEN = "MM月DD日 HH时mm分",
-  SIXTEEN = "MM月DD日 HH:mm:ss",
-  SEVENTEEN = "MM月DD日 HH:mm",
-}
+const TimeType = {
+  ONE: "YYYY-MM-DD",
+  TWO: "YYYY-MM-DD HH:mm:ss",
+  THREE: "YYYY-MM-DD HH:mm",
+  FOUR: "YYYY/MM/DD",
+  FIVE: "YYYY/MM/DD HH:mm:ss",
+  SIX: "YYYY/MM/DD HH:mm",
+  SEVEN: "YYYY年MM月DD日",
+  EIGHT: "YYYY年MM月DD日 HH时mm分ss秒",
+  NINE: "YYYY年MM月DD日 HH时mm分",
+  TEN: "YYYY年MM月DD日 HH:mm:ss",
+  ELEVEN: "YYYY年MM月DD日 HH:mm",
+  TWELVE: "YYYY年MM月",
+  THIRTEEN: "MM月DD日",
+  FOURTEEN: "MM月DD日 HH时mm分ss秒",
+  FIFTEEN: "MM月DD日 HH时mm分",
+  SIXTEEN: "MM月DD日 HH:mm:ss",
+  SEVENTEEN: "MM月DD日 HH:mm",
+};
 
-const allTimeTypes = [
-  TimeType.ONE,
-  TimeType.TWO,
-  TimeType.THREE,
-  TimeType.FOUR,
-  TimeType.FIVE,
-  TimeType.SIX,
-  TimeType.SEVEN,
-  TimeType.EIGHT,
-  TimeType.NINE,
-  TimeType.TEN,
-  TimeType.ELEVEN,
-  TimeType.TWELVE,
-  TimeType.THIRTEEN,
-  TimeType.FOURTEEN,
-  TimeType.FIFTEEN,
-  TimeType.SIXTEEN,
-  TimeType.SEVENTEEN,
-];
+const allTimeTypes = Object.values(TimeType);
 
 const padStart = (value: number, len = 2): string =>
   String(value).padStart(len, "0");
 
-function timeFormatting(date: string, type: TimeType): string;
-function timeFormatting(date: Date, type: TimeType): string;
-function timeFormatting(date: TimeType): string;
-function timeFormatting(
-  date: string | Date | TimeType,
-  type?: TimeType
-): string {
-  if (allTimeTypes.includes(date as TimeType)) {
-    type = date as TimeType;
+function timeFormatting(date: string, type: string): string;
+function timeFormatting(date: Date, type: string): string;
+function timeFormatting(date: string): string;
+function timeFormatting(date: string | Date, type?: string): string {
+  if (allTimeTypes.includes(date as string)) {
+    type = date as string;
     date = new Date();
   }
   if (!isString(date) && !isDate(date))
