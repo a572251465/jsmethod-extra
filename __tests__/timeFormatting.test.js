@@ -88,6 +88,6 @@ describe("timeFormatting", () => {
   });
 
   test("timeFormatting ~~ only one params", () => {
-    expect(timeFormatting(TimeType.TWELVE)).toBe("2023年05月");
+    expect(timeFormatting(TimeType.TWELVE)).toBe("2023年06月");
   });
 });
