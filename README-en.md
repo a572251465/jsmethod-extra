@@ -46,6 +46,7 @@ pnpm install jsmethod-extra -S
 - [valueOrDefault](#valueOrDefault)
 - [isHas](#isHas)
 - [timeFormatting](#timeFormatting)
+- [queryURLParams](#queryURLParams)
 - [other api](#simple-api)
 
 #### addPrefix
@@ -85,6 +86,9 @@ isEmpty(undefined);
 isEmpty("");
 // false
 isEmpty(0);
+const arr = [];
+// true
+isEmpty(arr);
 ```
 
 #### isNotEmpty
@@ -361,6 +365,28 @@ export declare function timeFormatting(date: Date, type: TimeType): string;
 export declare function timeFormatting(date: TimeType): string;
 ```
 
+#### queryURLParams
+
+- use
+
+```js
+import { queryURLParams } from "jsmethod-extra";
+const url = "http://www.baidu.com?tk=1&token=2&userId=3&systemId=4";
+const url1 = "";
+const url2 = "http://www.baidu.com?tk=";
+queryURLParams(url); // {tk: 1, token: 2, userId: 3, systemId: 4}
+queryURLParams(url1); // {}
+queryURLParams(url1); // {}
+```
+
+- type
+
+```ts
+export declare const queryURLParams: <T extends keyof any, K = string>(
+  url: string
+) => Record<T, K>;
+```
+
 #### simple api
 
 - isDate
@@ -387,3 +413,4 @@ export declare function timeFormatting(date: TimeType): string;
 - 1.0.3 add function valueOrDefault infer type
 - 1.0.4 add function timeFormatting
 - 1.0.5 edit function timeFormatting type
+- 1.0.6 add function queryURLParams
