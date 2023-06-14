@@ -11,3 +11,10 @@ export const getTypes = (value: unknown | unknown[]): string[] => {
     return execs ? execs[1] : "";
   });
 };
+
+export const getSingleType = (value: unknown): string => {
+  if (isEmpty(value)) return "";
+  const type = commonObj.toString.call(value).toLowerCase();
+  const execs = /\s+([a-z]+)/gi.exec(type);
+  return execs ? execs[1] : "";
+};

@@ -28,3 +28,4 @@ export { isBlankEmpty } from "./core/isBlankEmpty";
 export { isHas } from "./core/isHas";
 export { timeFormatting, TimeType } from "./core/timeFormatting";
 export { queryURLParams } from "./core/queryURLParams";
+export { getSingleType } from "./core/getSingleType";

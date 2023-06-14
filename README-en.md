@@ -39,6 +39,7 @@ pnpm install jsmethod-extra -S
 - [isObject](#isObject)
 - [isPlainObject](#isPlainObject)
 - [getTypes](#getTypes)
+- [getSingleType](#getSingleType)
 - [isFullObject](#isFullObject)
 - [equals](#equals)
 - [slice](#slice)
@@ -179,6 +180,26 @@ type
 ```ts
 export type getTypes = {
   (value: unknown | unknown[]): string[];
+};
+```
+
+#### getSingleType
+
+使用案例
+
+```js
+import { getSingleType } from "jsmethod-extra";
+// ""
+getSingleType();
+// "number"
+getSingleType(1);
+```
+
+类型
+
+```ts
+export type getSingleType = {
+  (value: unknown): string;
 };
 ```
 
@@ -414,3 +435,4 @@ export declare const queryURLParams: <T extends keyof any, K = string>(
 - 1.0.4 add function timeFormatting
 - 1.0.5 edit function timeFormatting type
 - 1.0.6 add function queryURLParams
+- 1.0.8 add function getSingleType, fix bug: modify before => isPlainObject([{}]) == true , modify after => isPlainObject([{}]) == false

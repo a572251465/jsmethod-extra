@@ -10,7 +10,7 @@ export { isObject } from "./core/isObject";
 export { isPlainObject } from "./core/isPlainObject";
 export { isString } from "./core/isString";
 export { isUndefined } from "./core/isUndefined";
-export { getTypes } from "./core/getTypes";
+export { getTypes, getSingleType } from "./core/getTypes";
 export { isDate } from "./core/isDate";
 export { isError } from "./core/isError";
 export { isFormData } from "./core/isFormData";
