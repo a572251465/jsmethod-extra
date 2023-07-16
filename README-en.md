@@ -9,11 +9,7 @@ English | [简体中文](https://github.com/a572251465/jsmethod-extra/README.md)
 - [x] 100% test coverage
 - [x] support TypeScript
 - [x] multiple packaging formats(esm, cjs, iife)
-- [x] node API make compatible
 - [x] support tree shaking
-- [x] support browser and nodejs
-- [x] support import and require
-- [x] support npm and yarn and pnpm
 
 ### install
 
@@ -305,6 +301,10 @@ isBlankEmpty(undefined);
 isBlankEmpty("");
 // true    isEmpty(0) === false
 isBlankEmpty(0);
+// true
+isBlankEmpty(false);
+// true
+isBlankEmpty(-1);
 ```
 
 #### valueOrDefault
@@ -436,3 +436,4 @@ export declare const queryURLParams: <T extends keyof any, K = string>(
 - 1.0.5 edit function timeFormatting type
 - 1.0.6 add function queryURLParams
 - 1.0.8 add function getSingleType, fix bug: modify before => isPlainObject([{}]) == true , modify after => isPlainObject([{}]) == false
+- 1.0.9 Add a special judgment for 【isBlankEmpty】, isBlankEmpty (false)===true/isBlankEmpty (-1)===true

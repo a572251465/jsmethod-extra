@@ -6,14 +6,10 @@
 
 ### 选择理由
 
-- [x] 100% test coverage
-- [x] support TypeScript
-- [x] multiple packaging formats(esm, cjs, iife)
-- [x] node API make compatible
-- [x] support tree shaking
-- [x] support browser and nodejs
-- [x] support import and require
-- [x] support npm and yarn and pnpm
+- [x] 100% 测试覆盖率
+- [x] 支持 TypeScript
+- [x] 支持多种打包方式(esm, cjs, iife)
+- [x] 支持 tree shaking
 
 ### 下载
 
@@ -305,6 +301,10 @@ isBlankEmpty(undefined);
 isBlankEmpty("");
 // true    isEmpty(0) === false
 isBlankEmpty(0);
+// true
+isBlankEmpty(false);
+// true
+isBlankEmpty(-1);
 ```
 
 #### valueOrDefault
@@ -436,3 +436,4 @@ export declare const queryURLParams: <T extends keyof any, K = string>(
 - 1.0.5 修改【timeFormatting】导出类型
 - 1.0.6 添加方法【queryURLParams】声明类型
 - 1.0.8 添加方法【getSingleType】, fix bug: 修改前 => isPlainObject([{}]) == true , 修改后 => isPlainObject([{}]) == false
+- 1.0.9 增加对【isBlankEmpty】特殊的判断，isBlankEmpty(false) === true/ isBlankEmpty(-1) === true
