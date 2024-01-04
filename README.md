@@ -44,6 +44,9 @@ pnpm install jsmethod-extra -S
 - [isHas](#isHas)
 - [timeFormatting](#timeFormatting)
 - [queryURLParams](#queryURLParams)
+- [queryURLParams](#queryURLParams)
+- [toCamelCase](#toCamelCase)
+- [toUnderlineCase](#toUnderlineCase)
 - [other api](#simple-api)
 
 #### addPrefix
@@ -408,6 +411,48 @@ export declare const queryURLParams: <T extends keyof any, K = string>(
 ) => Record<T, K>;
 ```
 
+#### toCamelCase
+
+- use
+
+```js
+import { StrUtils, toCamelCase } from "jsmethod-extra";
+StrUtils.toCamelCase("name_user"); // nameUser
+toCamelCase("name_user"); // nameUser
+toCamelCase("Name_user"); // NameUser
+toCamelCase("name_user", null); // ""
+```
+
+- type
+
+```ts
+export declare const toCamelCase: (
+  charSequence: string,
+  symbols?: string
+) => string;
+```
+
+#### toUnderlineCase
+
+- use
+
+```js
+import { StrUtils, toUnderlineCase } from "jsmethod-extra";
+StrUtils.toUnderlineCase("nameUser"); // name_user
+toUnderlineCase("nameUser"); // name_user
+toUnderlineCase("NameUser"); // name_user
+toUnderlineCase("nameUser", null); // ""
+```
+
+- type
+
+```ts
+export declare const toUnderlineCase: (
+  charSequence: string,
+  symbols?: string
+) => string;
+```
+
 #### simple api
 
 - isDate
@@ -437,3 +482,4 @@ export declare const queryURLParams: <T extends keyof any, K = string>(
 - 1.0.6 添加方法【queryURLParams】声明类型
 - 1.0.8 添加方法【getSingleType】, fix bug: 修改前 => isPlainObject([{}]) == true , 修改后 => isPlainObject([{}]) == false
 - 1.0.9 增加对【isBlankEmpty】特殊的判断，isBlankEmpty(false) === true/ isBlankEmpty(-1) === true
+- 1.0.10 增加了 驼峰命令法之前的转换（从驼峰转换到指定符号分割字符串，从指定符号分割字符串 转换到 驼峰）

@@ -44,6 +44,8 @@ pnpm install jsmethod-extra -S
 - [isHas](#isHas)
 - [timeFormatting](#timeFormatting)
 - [queryURLParams](#queryURLParams)
+- [toCamelCase](#toCamelCase)
+- [toUnderlineCase](#toUnderlineCase)
 - [other api](#simple-api)
 
 #### addPrefix
@@ -408,6 +410,48 @@ export declare const queryURLParams: <T extends keyof any, K = string>(
 ) => Record<T, K>;
 ```
 
+#### toCamelCase
+
+- use
+
+```js
+import { StrUtils, toCamelCase } from "jsmethod-extra";
+StrUtils.toCamelCase("name_user"); // nameUser
+toCamelCase("name_user"); // nameUser
+toCamelCase("Name_user"); // NameUser
+toCamelCase("name_user", null); // ""
+```
+
+- type
+
+```ts
+export declare const toCamelCase: (
+  charSequence: string,
+  symbols?: string
+) => string;
+```
+
+#### toUnderlineCase
+
+- use
+
+```js
+import { StrUtils, toUnderlineCase } from "jsmethod-extra";
+StrUtils.toUnderlineCase("nameUser"); // name_user
+toUnderlineCase("nameUser"); // name_user
+toUnderlineCase("NameUser"); // name_user
+toUnderlineCase("nameUser", null); // ""
+```
+
+- type
+
+```ts
+export declare const toUnderlineCase: (
+  charSequence: string,
+  symbols?: string
+) => string;
+```
+
 #### simple api
 
 - isDate
@@ -437,3 +481,4 @@ export declare const queryURLParams: <T extends keyof any, K = string>(
 - 1.0.6 add function queryURLParams
 - 1.0.8 add function getSingleType, fix bug: modify before => isPlainObject([{}]) == true , modify after => isPlainObject([{}]) == false
 - 1.0.9 Add a special judgment for 【isBlankEmpty】, isBlankEmpty (false)===true/isBlankEmpty (-1)===true
+- 1.0.10 Added conversion before the camel hump command method (from camel hump to specified symbol segmentation string, from specified symbol segmentation string to camel hump)
