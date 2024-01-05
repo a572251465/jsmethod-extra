@@ -31,7 +31,7 @@ import { queryURLParams } from "./core/queryURLParams";
 import { toUnderlineCase } from "./core/toUnderlineCase";
 import { toCamelCase } from "./core/toCamelCase";
 
-export const StrUtils = {
+export const StrUtil = {
   toCamelCase,
   addPrefix,
   isArray,

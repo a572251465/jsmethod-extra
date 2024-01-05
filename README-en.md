@@ -415,8 +415,8 @@ export declare const queryURLParams: <T extends keyof any, K = string>(
 - use
 
 ```js
-import { StrUtils, toCamelCase } from "jsmethod-extra";
-StrUtils.toCamelCase("name_user"); // nameUser
+import { StrUtil, toCamelCase } from "jsmethod-extra";
+StrUtil.toCamelCase("name_user"); // nameUser
 toCamelCase("name_user"); // nameUser
 toCamelCase("Name_user"); // NameUser
 toCamelCase("name_user", null); // ""
@@ -436,8 +436,8 @@ export declare const toCamelCase: (
 - use
 
 ```js
-import { StrUtils, toUnderlineCase } from "jsmethod-extra";
-StrUtils.toUnderlineCase("nameUser"); // name_user
+import { StrUtil, toUnderlineCase } from "jsmethod-extra";
+StrUtil.toUnderlineCase("nameUser"); // name_user
 toUnderlineCase("nameUser"); // name_user
 toUnderlineCase("NameUser"); // name_user
 toUnderlineCase("nameUser", null); // ""
