@@ -35,7 +35,7 @@ import type { getSingleType as IGetSingleType } from "./core/getSingleType";
 import type { toCamelCase as IToCamelCase } from "./core/toCamelCase";
 import type { toUnderlineCase as IToUnderlineCase } from "./core/toUnderlineCase";
 
-export type StrUtils = {
+interface IStrUtils {
   toUnderlineCase: IToUnderlineCase;
   addPrefix: IAddPrefix;
   isArray: IIsArray;
@@ -70,7 +70,8 @@ export type StrUtils = {
   slice: ISlice;
   valueOrDefault: IValueOrDefault;
   isBlankEmpty: IIsBlankEmpty;
-};
+}
+export declare const StrUtils: IStrUtils;
 
 export { addPrefix } from "./core/addPrefix";
 export { isArray } from "./core/isArray";
