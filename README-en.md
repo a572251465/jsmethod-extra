@@ -46,6 +46,7 @@ pnpm install jsmethod-extra -S
 - [queryURLParams](#queryURLParams)
 - [toCamelCase](#toCamelCase)
 - [toUnderlineCase](#toUnderlineCase)
+- [localCache](#localCache)
 - [other api](#simple-api)
 
 #### addPrefix
@@ -452,6 +453,47 @@ export declare const toUnderlineCase: (
 ) => string;
 ```
 
+#### localCache
+
+> Localize attributes (similar to SessionStorage/LocalStorage)
+
+##### method
+
+- get(xx) Obtain the corresponding value value based on the specified key
+- set(xx, xx, ...) Set key/value to cache
+- clear clean all cache
+- delay(xx).set(xx, xx, ...) Set cache in a delayed manner, with API<delay>parameter in milliseconds
+- key(xx) Retrieve cache based on specified index
+- del(xx) Delete cache based on key
+
+use
+
+```js
+import { localCache } from "jsmethod-extra";
+
+const cache = localCache();
+cache.set("test", "demo01");
+cache.get("test"); // demo01
+cache.clear();
+cache.get("test"); // undefined
+cache.delay(10 * 1000).set("test01", "demo02");
+```
+
+type
+
+```ts
+export type ILocalCacheResult = {
+  clear(): voi;
+  get(key: string): string | null;
+  key(index: number): string | null;
+  del(key: string): void;
+  set(...args: string[]): void;
+  delay: (time: number) => { set: (...args: string[]) => void };
+};
+
+export declare const localCache: (storage: Storage) => ILocalCacheResult;
+```
+
 #### simple api
 
 - isDate
@@ -482,3 +524,4 @@ export declare const toUnderlineCase: (
 - 1.0.8 add function getSingleType, fix bug: modify before => isPlainObject([{}]) == true , modify after => isPlainObject([{}]) == false
 - 1.0.9 Add a special judgment for 【isBlankEmpty】, isBlankEmpty (false)===true/isBlankEmpty (-1)===true
 - 1.0.10 Added conversion before the camel hump command method (from camel hump to specified symbol segmentation string, from specified symbol segmentation string to camel hump)
+- 1.0.13 add function API【isBoolean】/ function 【localCache】 Local caching of attribute values

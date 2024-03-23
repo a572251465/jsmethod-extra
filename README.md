@@ -44,9 +44,9 @@ pnpm install jsmethod-extra -S
 - [isHas](#isHas)
 - [timeFormatting](#timeFormatting)
 - [queryURLParams](#queryURLParams)
-- [queryURLParams](#queryURLParams)
 - [toCamelCase](#toCamelCase)
 - [toUnderlineCase](#toUnderlineCase)
+- [localCache](#localCache)
 - [other api](#simple-api)
 
 #### addPrefix
@@ -235,6 +235,47 @@ export type isFullObject = (
 ) => boolean;
 ```
 
+#### localCache
+
+> 将属性 本地化（类似 sessionStorage/ localStorage）
+
+##### method
+
+- get(xx) 根据指定的key，拿到对应value值
+- set(xx, xx, ...) 将key/ value 设置到缓存中
+- clear 清除所有的缓存
+- delay(xx).set(xx, xx, ...) 以延迟的方式 设置缓存，API<delay> 的参数是毫秒
+- key(xx) 根据指定的索引 拿到缓存
+- del(xx) 根据 key 删除缓存
+
+使用案例
+
+```js
+import { localCache } from "jsmethod-extra";
+
+const cache = localCache();
+cache.set("test", "demo01");
+cache.get("test"); // demo01
+cache.clear();
+cache.get("test"); // undefined
+cache.delay(10 * 1000).set("test01", "demo02");
+```
+
+类型
+
+```ts
+export type ILocalCacheResult = {
+  clear(): voi;
+  get(key: string): string | null;
+  key(index: number): string | null;
+  del(key: string): void;
+  set(...args: string[]): void;
+  delay: (time: number) => { set: (...args: string[]) => void };
+};
+
+export declare const localCache: (storage: Storage) => ILocalCacheResult;
+```
+
 #### equals
 
 使用案例
@@ -416,8 +457,7 @@ export declare const queryURLParams: <T extends keyof any, K = string>(
 - use
 
 ```js
-import { StrUtil, toCamelCase } from "jsmethod-extra";
-StrUtil.toCamelCase("name_user"); // nameUser
+import { toCamelCase } from "jsmethod-extra";
 toCamelCase("name_user"); // nameUser
 toCamelCase("Name_user"); // NameUser
 toCamelCase("name_user", null); // ""
@@ -437,8 +477,7 @@ export declare const toCamelCase: (
 - use
 
 ```js
-import { StrUtil, toUnderlineCase } from "jsmethod-extra";
-StrUtil.toUnderlineCase("nameUser"); // name_user
+import { toUnderlineCase } from "jsmethod-extra";
 toUnderlineCase("nameUser"); // name_user
 toUnderlineCase("NameUser"); // name_user
 toUnderlineCase("nameUser", null); // ""
@@ -469,6 +508,7 @@ export declare const toUnderlineCase: (
 - isNull
 - isFunction
 - isArray
+- isBoolean
 
 ## 更新记录
 
@@ -483,3 +523,4 @@ export declare const toUnderlineCase: (
 - 1.0.8 添加方法【getSingleType】, fix bug: 修改前 => isPlainObject([{}]) == true , 修改后 => isPlainObject([{}]) == false
 - 1.0.9 增加对【isBlankEmpty】特殊的判断，isBlankEmpty(false) === true/ isBlankEmpty(-1) === true
 - 1.0.10 增加了 驼峰命令法之前的转换（从驼峰转换到指定符号分割字符串，从指定符号分割字符串 转换到 驼峰）
+- 1.0.13 添加API【isBoolean】方法/ 添加方法【localCache】 将属性本地缓存化
