@@ -26,6 +26,13 @@ export function localCache(storage = window.sessionStorage) {
         set: setCommonHandler.bind(null, time),
       };
     },
+    isHas(): boolean {
+      return false;
+    },
+    keys(): Array<string> {
+      return [];
+    },
+    // entries() {},
     key: storage.key,
     set(...args: string[]) {
       setCommonHandler(0, ...args);
