@@ -14,7 +14,6 @@ export { getTypes } from "./core/getTypes";
 export { isDate } from "./core/isDate";
 export { isError } from "./core/isError";
 export { isFormData } from "./core/isFormData";
-export { isMath } from "./core/isMath";
 export { isRegExp } from "./core/isRegExp";
 export { isSymbol } from "./core/isSymbol";
 export { isMap } from "./core/isMap";
