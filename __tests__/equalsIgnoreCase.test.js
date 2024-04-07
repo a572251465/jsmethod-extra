@@ -1,5 +1,5 @@
 import { describe, expect, test } from "@jest/globals";
-import { equalsIgnoreCase, strFormat } from "../src";
+import { equalsIgnoreCase } from "../src";
 
 describe("equalsIgnoreCase", () => {
   test("normal ~~ 001", () => {
