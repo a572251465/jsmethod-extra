@@ -34,4 +34,9 @@ describe("isHas", () => {
     expect(isHas(true, "name")).toBeFalsy();
     expect(isHas(person, true)).toBeFalsy();
   });
+
+  test("isHas ~~ other", () => {
+    expect(isHas(["1"], 0)).toBeFalsy();
+    expect(isHas({}, "age")).toBeFalsy();
+  });
 });
