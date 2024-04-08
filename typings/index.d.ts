@@ -22,6 +22,7 @@ export { isFullObject } from "./core/isFullObject";
 export { equals } from "./core/equals";
 export { isNotEmpty } from "./core/isNotEmpty";
 export { slice } from "./core/slice";
+export { isBlankEmpty } from "./core/isBlankEmpty";
 export { valueOrDefault } from "./core/valueOrDefault";
 export { isHas } from "./core/isHas";
 export { timeFormatting, TimeType } from "./core/timeFormatting";

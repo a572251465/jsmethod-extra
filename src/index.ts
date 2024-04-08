@@ -19,6 +19,7 @@ export { isSymbol } from "./core/isSymbol";
 export { isMap } from "./core/isMap";
 export { isSet } from "./core/isSet";
 export { isFullObject } from "./core/isFullObject";
+export { isBlankEmpty } from "./core/isBlankEmpty";
 export { equals } from "./core/equals";
 export { isNotEmpty } from "./core/isNotEmpty";
 export { slice } from "./core/slice";
