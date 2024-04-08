@@ -1,8 +1,8 @@
 import { isString } from "./isString";
 import { isDate } from "./isDate";
 import { isNotEmpty } from "./isNotEmpty";
-import { isBlankEmpty } from "./isBlankEmpty";
 import { equals } from "./equals";
+import { isEmpty } from "./isEmpty";
 
 const TimeType = {
   ONE: "YYYY-MM-DD",
@@ -39,7 +39,7 @@ function timeFormatting(date: string | Date, type?: string): string {
   }
   if (!isString(date) && !isDate(date))
     throw new Error("first params type is string or date or TimeType");
-  if (isBlankEmpty(type)) throw new Error("second params type is not empty");
+  if (isEmpty(type)) throw new Error("second params type is not empty");
   if (isNotEmpty(type) && !allTimeTypes.includes(type!))
     throw new Error("second params type must be TimeType");
 
