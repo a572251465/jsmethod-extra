@@ -34,5 +34,6 @@ export { isArrayAndNotEmpty } from "./core/isArrayAndNotEmpty";
 export { isLowerCase } from "./core/isLowerCase";
 export { isUpperCase } from "./core/isUpperCase";
 export { strFormat } from "./core/strFormat";
+export { sleep } from "./core/sleep";
 export { isBlankEmpty } from "./core/isBlankEmpty";
 export { notArrayOrEmptyArray } from "./core/notArrayOrEmptyArray";

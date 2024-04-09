@@ -38,3 +38,4 @@ export { isLowerCase } from "./core/isLowerCase";
 export { isUpperCase } from "./core/isUpperCase";
 export { strFormat } from "./core/strFormat";
 export { notArrayOrEmptyArray } from "./core/notArrayOrEmptyArray";
+export { sleep } from "./core/sleep";
