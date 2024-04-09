@@ -1,6 +1,5 @@
 import { isArray } from "./isArray";
 import { commonObj } from "./helper";
-import { isEmpty } from "./isEmpty";
 
 export const getTypes = (value: unknown | unknown[]): string[] => {
   if (!isArray(value)) value = [value];
