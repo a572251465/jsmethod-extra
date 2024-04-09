@@ -21,4 +21,8 @@ describe("StrUtil.toCamelCase", () => {
   test("case 005", () => {
     expect(toCamelCase("111")).toEqual("111");
   });
+
+  test("case 006", () => {
+    expect(toCamelCase("nameUser")).toEqual("nameUser");
+  });
 });

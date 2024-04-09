@@ -1,4 +1,5 @@
 import { equals } from "./equals";
+import { isBlankEmpty } from "./isBlankEmpty";
 
 export function localCache(storage = window.sessionStorage) {
   function setCommonHandler(time: number, ...args: string[]) {
@@ -19,6 +20,18 @@ export function localCache(storage = window.sessionStorage) {
     if (!equals(time, 0)) invokeTimeOut();
   }
 
+  function getItems(): Array<string> {
+    const items: Array<string> = [];
+
+    let index = 0;
+    for (;;) {
+      const key = storage.key(index++);
+      if (isBlankEmpty(key)) break;
+      items.push(key!);
+    }
+    return items;
+  }
+
   return {
     clear: storage.clear,
     delay(time: number) {
@@ -26,13 +39,16 @@ export function localCache(storage = window.sessionStorage) {
         set: setCommonHandler.bind(null, time),
       };
     },
-    isHas(): boolean {
-      return false;
+    isHas(key: string): boolean {
+      const items = getItems();
+      return items.includes(key);
+    },
+    all(): Array<Record<string, unknown>> {
+      return getItems().map((key) => ({ [key]: storage.getItem(key) }));
     },
     keys(): Array<string> {
-      return [];
+      return getItems();
     },
-    // entries() {},
     key: storage.key,
     set(...args: string[]) {
       setCommonHandler(0, ...args);
