@@ -39,3 +39,5 @@ export { isUpperCase } from "./core/isUpperCase";
 export { strFormat } from "./core/strFormat";
 export { notArrayOrEmptyArray } from "./core/notArrayOrEmptyArray";
 export { sleep } from "./core/sleep";
+export { join } from "./core/join";
+export { splitAndJoin } from "./core/splitAndJoin";
