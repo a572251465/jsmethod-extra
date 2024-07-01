@@ -3,7 +3,7 @@ export interface FiringTaskType {
 }
 
 export interface IPLimitC {
-  firingTask(argTask: FiringTaskType);
+  firingTask(...argTask: Array<FiringTaskType>);
 }
 
 interface IPLimit {
