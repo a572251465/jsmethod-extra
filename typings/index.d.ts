@@ -43,4 +43,4 @@ export { join } from "./core/join";
 export { splitAndJoin } from "./core/splitAndJoin";
 export { isPromise } from "./core/isPromise";
 export { SubscriberSort, emitterAndTaker } from "./core/emitterAndTaker";
-export { FiringTaskType, PLimit } from "./core/PLimit";
+export { FiringTaskType, PLimit, IPLimitC } from "./core/PLimit";

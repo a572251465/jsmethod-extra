@@ -2,7 +2,7 @@ export interface FiringTaskType {
   (): Promise<void>;
 }
 
-class IPLimitC {
+export interface IPLimitC {
   firingTask(argTask: FiringTaskType);
 }
 
