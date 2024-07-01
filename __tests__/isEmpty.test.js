@@ -8,6 +8,7 @@ describe("isEmpty", () => {
     expect(isEmpty(null)).toBeTruthy();
     expect(isEmpty([])).toBeTruthy();
     expect(isEmpty(0)).toBeTruthy();
+    expect(isEmpty(-1)).toBeTruthy();
     expect(isEmpty("")).toBeTruthy();
   });
 

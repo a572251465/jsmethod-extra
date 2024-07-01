@@ -9,5 +9,5 @@ export const isEmpty = (value: unknown): value is boolean =>
   isUndefined(value) ||
   isNull(value) ||
   isEmptyString(value) ||
-  (isNumber(value) && equals(value, 0)) ||
+  (isNumber(value) && (equals(value, 0) || equals(value, -1))) ||
   (isArray(value) && value.length === 0);

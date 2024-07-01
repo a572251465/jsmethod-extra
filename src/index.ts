@@ -39,3 +39,5 @@ export { isBlankEmpty } from "./core/isBlankEmpty";
 export { notArrayOrEmptyArray } from "./core/notArrayOrEmptyArray";
 export { join } from "./core/join";
 export { splitAndJoin } from "./core/splitAndJoin";
+export { isPromise } from "./core/isPromise";
+export { PLimit } from "./core/PLimit";
