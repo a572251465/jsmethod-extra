@@ -1,6 +1,6 @@
 ## jsmethod-extra
 
-> Extra methods for JavaScript
+> Extra methods for JavaScript 
 
 简体中文 | [English](https://github.com/a572251465/jsmethod-extra.md)
 
