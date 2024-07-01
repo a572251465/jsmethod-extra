@@ -1,6 +1,6 @@
-import { isPlainObject } from "./isPlainObject";
 import { isFunction } from "./isFunction";
+import { isObject } from "./isObject";
 
 export function isPromise(value: object): boolean {
-  return isPlainObject(value) && isFunction(value.then);
+  return isObject(value) && isFunction(value.then);
 }
