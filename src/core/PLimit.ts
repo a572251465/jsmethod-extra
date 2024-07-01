@@ -12,7 +12,7 @@ export class PLimit {
   // 表示 最大并发
   private readonly maxConcurrentRequests: number;
   // 表示 当前执行的任务数
-  private currentExecuteTaskCount: number = 0;
+  private currentExecuteTaskCount = 0;
   // 表示等待的任务
   private waitTasks: Array<FiringTaskType> = [];
 
