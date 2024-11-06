@@ -1,1 +1,5 @@
-export declare const addPrefix: (value: string, prefix: string, splitSymbol?: string) => string;
+export declare const addPrefix: (
+  value: string,
+  prefix: string,
+  splitSymbol?: string
+) => string;

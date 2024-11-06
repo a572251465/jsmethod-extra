@@ -44,3 +44,6 @@ export { splitAndJoin } from "./core/splitAndJoin";
 export { isPromise } from "./core/isPromise";
 export { SubscriberSort, emitterAndTaker } from "./core/emitterAndTaker";
 export { FiringTaskType, PLimit, IPLimitC } from "./core/PLimit";
+export { useState, ValueTypes } from "./core/hooks/useState";
+export { getExtName } from "./core/getExtName";
+export { transformBodyJsonify } from "./core/transformBodyJsonify";
